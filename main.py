@@ -2,8 +2,9 @@ import discord
 import json
 import asyncio
 import os
-from discord.ext import commands
-
+import requests
+from discord.ext import command
+from discord import embed
 
 
 with open('config.json', 'r') as file:
