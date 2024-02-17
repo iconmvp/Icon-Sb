@@ -21,4 +21,19 @@ async def on_ready():
   print(f"[+] Logged in as {client.user.name})
   print(f"[+] Client id : {client.user.id}")
 
-  
+
+@client.command(name='calc')
+async def calculate(ctx, *, expression: str):
+    await ctx.message.delete()
+    try:
+
+        result = eval(expression, {'__builtins__': None}, {})
+    except Exception as e:
+
+        await ctx.send(f"Error: {e}")
+        return
+    
+
+    sent_msg = await ctx.send(f"# Calculation\n**__Input__** : {expression}\n**__Output__** : {result}")
+    await asyncio.sleep(20)
+    await sent_msg.delete()
