@@ -37,3 +37,12 @@ async def calculate(ctx, *, expression: str):
     sent_msg = await ctx.send(f"# Calculation\n**__Input__** : {expression}\n**__Output__** : {result}")
     await asyncio.sleep(20)
     await sent_msg.delete()
+
+@client.command(name='spam')
+async def spam(ctx, count: int, *, message: str):
+
+    for _ in range(count):
+        sent_msg = await ctx.send(message)
+        await asyncio.sleep(5)
+        await sent_msg.delete()
+
