@@ -47,3 +47,8 @@ async def spam(ctx, count: int, *, message: str):
         await asyncio.sleep(5)
         await sent_msg.delete()
 
+@client.command(aliases=['vc2i'])
+async def vouchc2i(ctx, ok, *, hmm):
+    await ctx.message.delete()
+    sent_msg = "`+rep {ctx.message.author.id} Exchange | {ok} To Upi [${hmm}] | Ty"
+    await ctx.send(sent_msg)
