@@ -52,3 +52,5 @@ async def vouchc2i(ctx, ok, *, hmm):
     await ctx.message.delete()
     sent_msg = "`+rep {ctx.message.author.id} Exchange | {ok} To Upi [${hmm}] | Ty"
     await ctx.send(sent_msg)
+
+@client.command()
